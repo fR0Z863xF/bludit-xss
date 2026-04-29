@@ -74,6 +74,12 @@ The Base64 payload decodes to JavaScript that:
 
 ### Reproduction Steps
 
+**Step 0:** Prepare env:
+
+- Start a Bludit 3.21.0 instance in Docker on port 8880
+- Install Bludit with admin credentials `admin` / `Admin12345`
+- Create an `author`-level user `evilauthor` / `Evil123456`
+
 **Step 1:** Save the exploit script (provided below) and run it:
 
 ```bash
@@ -81,9 +87,6 @@ python3 exp.py
 ```
 
 The script will:
-- Start a Bludit 3.21.0 instance in Docker on port 8880
-- Install Bludit with admin credentials `admin` / `Admin12345`
-- Create an `author`-level user `evilauthor` / `Evil123456`
 - Login as the author and publish a normal-looking blog post containing the XSS payload
 - Print instructions for manual browser verification
 
